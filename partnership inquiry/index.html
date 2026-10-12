@@ -113,6 +113,34 @@
         </form>
       </section>
 
+      <section class="comments-card" aria-labelledby="comments-title">
+        <div class="comments-heading">
+          <span class="eyebrow"><span aria-hidden="true">☷</span> 소통 공간</span>
+          <h2 id="comments-title">댓글</h2>
+          <p>자유롭게 의견과 이야기를 나눠보세요.</p>
+        </div>
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+            this.page.url = "https://partnership-inquiry.pages.dev/";
+            this.page.identifier = "partnership-inquiry";
+          };
+          (function () {
+            var d = document;
+            var s = d.createElement("script");
+            s.src = "https://pongproduct.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", String(Date.now()));
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>
+          <p>
+            댓글을 보려면 JavaScript를 활성화해 주세요.
+            <a href="https://disqus.com/?ref_noscript">Disqus 제공 댓글</a>
+          </p>
+        </noscript>
+      </section>
+
       <footer class="site-footer">
         <a href="https://product-test-7gv.pages.dev/">행운번호</a>
         <span>문의 내용을 보내주셔서 감사합니다.</span>
