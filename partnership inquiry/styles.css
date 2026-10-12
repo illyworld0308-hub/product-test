@@ -1,0 +1,329 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+  color: var(--text-primary);
+  background: var(--page-bg);
+  color-scheme: light;
+  --page-bg: #f7f8fc;
+  --page-glow: rgba(222, 244, 231, 0.7);
+  --text-primary: #18221c;
+  --text-brand: #1c2920;
+  --text-muted: #7c8880;
+  --text-subtle: #9aa29c;
+  --text-faint: #87928a;
+  --accent: #328251;
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --card-border: #e8ece8;
+  --input-bg: #ffffff;
+  --input-border: #dfe6e0;
+  --input-placeholder: #a1aaa3;
+  --card-shadow: rgba(32, 64, 43, 0.08);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #111713;
+  --page-glow: rgba(38, 86, 55, 0.24);
+  --text-primary: #edf3ee;
+  --text-brand: #edf3ee;
+  --text-muted: #a3b0a6;
+  --text-subtle: #91a095;
+  --text-faint: #9eaea2;
+  --accent: #83d39a;
+  --card-bg: rgba(27, 36, 30, 0.96);
+  --card-border: #344138;
+  --input-bg: #151d18;
+  --input-border: #435248;
+  --input-placeholder: #829188;
+  --card-shadow: rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 43%, var(--page-glow), transparent 40%),
+    var(--page-bg);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.site-header {
+  display: flex;
+  width: min(100%, 1080px);
+  height: 76px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-brand);
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 11px;
+  background: #287a49;
+  color: white;
+  font-size: 17px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lotto-link {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lotto-link:hover,
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.lotto-link span {
+  margin-left: 3px;
+}
+
+.theme-toggle {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.theme-icon-dark,
+:root[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon-dark {
+  display: inline;
+}
+
+.inquiry-card {
+  width: min(100%, 560px);
+  margin: auto 0;
+  padding: 38px 34px;
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  background: var(--card-bg);
+  box-shadow: 0 16px 48px var(--card-shadow);
+}
+
+.intro {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.eyebrow span {
+  font-size: 17px;
+}
+
+h1 {
+  margin: 11px 0 8px;
+  font-size: clamp(30px, 6vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.inquiry-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+}
+
+.form-field label {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field label span {
+  color: var(--text-subtle);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  border-radius: 11px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.form-field input {
+  min-height: 46px;
+  padding: 0 13px;
+}
+
+.form-field textarea {
+  min-height: 128px;
+  padding: 12px 13px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--input-placeholder);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 12px;
+  background: #287a49;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+  background: #21683d;
+}
+
+.theme-toggle:focus-visible,
+.submit-button:focus-visible,
+.brand:focus-visible,
+.lotto-link:focus-visible {
+  outline: 3px solid #9bd4ad;
+  outline-offset: 3px;
+}
+
+.form-note {
+  margin: -5px 0 0;
+  color: var(--text-subtle);
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0 27px;
+  color: var(--text-subtle);
+  font-size: 11px;
+}
+
+.site-footer a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0 16px;
+  }
+
+  .site-header {
+    height: 64px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .inquiry-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

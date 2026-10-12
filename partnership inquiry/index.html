@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="행운번호 서비스의 제휴 및 협업 문의를 보내주세요."
+    />
+    <meta name="theme-color" content="#f7f8fc" />
+    <title>제휴 문의 - 행운번호</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <a
+          class="brand"
+          href="https://product-test-7gv.pages.dev/"
+          aria-label="행운번호 로또 추첨 사이트로 이동"
+        >
+          <span class="brand-mark" aria-hidden="true">L</span>
+          <span>행운번호</span>
+        </a>
+        <div class="header-actions">
+          <a class="lotto-link" href="https://product-test-7gv.pages.dev/">
+            로또 번호 추첨
+            <span aria-hidden="true">↗</span>
+          </a>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="다크 모드로 전환"
+            title="다크 모드로 전환"
+            aria-pressed="false"
+          >
+            <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
+            <span class="theme-icon theme-icon-dark" aria-hidden="true">☾</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="inquiry-card" aria-labelledby="page-title">
+        <div class="intro">
+          <span class="eyebrow"><span aria-hidden="true">✦</span> 함께해요</span>
+          <h1 id="page-title">제휴 문의</h1>
+          <p>협업 제안이나 궁금한 점을 남겨주시면 확인 후 답변드릴게요.</p>
+        </div>
+
+        <form
+          class="inquiry-form"
+          action="https://formspree.io/f/mjygolnb"
+          method="POST"
+        >
+          <div class="form-field">
+            <label for="inquiry-name">이름</label>
+            <input
+              id="inquiry-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="홍길동"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="inquiry-email">이메일</label>
+            <input
+              id="inquiry-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="inquiry-company">회사 또는 서비스명 <span>(선택)</span></label>
+            <input
+              id="inquiry-company"
+              name="company"
+              type="text"
+              autocomplete="organization"
+              placeholder="회사 또는 서비스명을 입력해 주세요"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="inquiry-message">문의 내용</label>
+            <textarea
+              id="inquiry-message"
+              name="message"
+              rows="5"
+              placeholder="제휴 제안 내용을 적어주세요."
+              required
+            ></textarea>
+          </div>
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="행운번호 사이트 제휴 문의"
+          />
+
+          <button class="submit-button" type="submit">문의 보내기</button>
+          <p class="form-note">
+            제출한 내용은 문의 답변을 위해 Formspree를 통해 전달됩니다.
+          </p>
+        </form>
+      </section>
+
+      <footer class="site-footer">
+        <a href="https://product-test-7gv.pages.dev/">행운번호</a>
+        <span>문의 내용을 보내주셔서 감사합니다.</span>
+      </footer>
+    </main>
+  </body>
+</html>
