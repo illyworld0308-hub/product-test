@@ -1,0 +1,335 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+  color: #18221c;
+  background: #f7f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 43%, rgba(222, 244, 231, 0.7), transparent 40%),
+    #f7f8fc;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.site-header {
+  display: flex;
+  width: min(100%, 1080px);
+  height: 76px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #1c2920;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 11px;
+  background: #287a49;
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.header-note {
+  color: #87928a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.lotto-card {
+  width: min(100%, 560px);
+  margin: auto 0;
+  padding: 40px 0 32px;
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #328251;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.eyebrow span {
+  font-size: 17px;
+}
+
+h1 {
+  margin: 11px 0 8px;
+  font-size: clamp(30px, 6vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.intro p,
+.ticket-heading p {
+  margin: 0;
+  color: #7c8880;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ticket {
+  padding: 28px 32px 26px;
+  border: 1px solid #e8ece8;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 48px rgba(32, 64, 43, 0.08);
+}
+
+.ticket-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.ticket-heading h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.ticket-heading p {
+  font-size: 12px;
+}
+
+.ticket-badge {
+  flex: none;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #edf6ef;
+  color: #397d50;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.results {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.result-row {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  gap: clamp(5px, 2vw, 12px);
+  padding: 8px 11px;
+  border: 1px solid #eff1ef;
+  border-radius: 14px;
+  animation: appear 280ms both;
+}
+
+.row-label {
+  width: 34px;
+  flex: none;
+  color: #9aa29c;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.number-ball {
+  display: grid;
+  width: clamp(34px, 8vw, 42px);
+  height: clamp(34px, 8vw, 42px);
+  flex: 1 1 0;
+  max-width: 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.number-ball[data-range="1"] {
+  background: #f2bb42;
+}
+
+.number-ball[data-range="2"] {
+  background: #559bd4;
+}
+
+.number-ball[data-range="3"] {
+  background: #e76c5e;
+}
+
+.number-ball[data-range="4"] {
+  background: #8b929b;
+}
+
+.number-ball[data-range="5"] {
+  background: #73b76b;
+}
+
+.empty-state {
+  display: flex;
+  min-height: 104px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #a1aaa3;
+  font-size: 12px;
+}
+
+.empty-state[hidden] {
+  display: none;
+}
+
+.empty-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px dashed #d8e1da;
+  border-radius: 50%;
+  color: #8fb29a;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.draw-button {
+  display: flex;
+  width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 14px;
+  background: #287a49;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 7px 16px rgba(40, 122, 73, 0.18);
+}
+
+.draw-button:hover {
+  transform: translateY(-1px);
+  background: #21683d;
+  box-shadow: 0 9px 20px rgba(40, 122, 73, 0.25);
+}
+
+.draw-button:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid #9bd4ad;
+  outline-offset: 3px;
+}
+
+.draw-button:active {
+  transform: translateY(0);
+}
+
+.disclaimer {
+  margin: 17px 0 0;
+  color: #9aa29c;
+  font-size: 11px;
+}
+
+.site-footer {
+  padding: 20px 0 27px;
+  color: #9aa29c;
+  font-size: 11px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0 16px;
+  }
+
+  .site-header {
+    height: 64px;
+  }
+
+  .lotto-card {
+    padding-top: 30px;
+  }
+
+  .ticket {
+    padding: 23px 16px 20px;
+    border-radius: 20px;
+  }
+
+  .result-row {
+    gap: 5px;
+    padding: 7px 6px;
+  }
+
+  .row-label {
+    width: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
